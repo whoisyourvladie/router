@@ -18,22 +18,24 @@
             rememberMe: "0",
             pwdCookieFlag: "0"
         }
+
+
         $("#login").click(function () {
             $.ajax({
                 type: 'POST',
                 url: "http://192.168.0.1/goform/login",
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-               // dataType: 'json',
+                // dataType: 'json',
                 data: $.param(data),
                 success: function (response) {
                     debugger;
                     console.log(response);
                     return response;
                 }
-
-              
             });
+        })
+
     </script>
 </body>
 </html>
