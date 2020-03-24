@@ -1,1 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
 
+</head>
+<body>
+    <button id="login">Login</button>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var data = {
+            user: "cusadmin",
+            pwd: "Qwerty@1",
+            rememberMe: "0",
+            pwdCookieFlag: "0"
+        }
+        $("#login").click(function () {
+            $.ajax({
+                type: 'POST',
+                url: "http://192.168.0.1/goform/login",
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+               // dataType: 'json',
+                data: $.param(data),
+                success: function (response) {
+                    debugger;
+                    console.log(response);
+                    return response;
+                }
+
+              
+            });
+    </script>
+</body>
+</html>
