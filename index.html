@@ -12,6 +12,8 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
     <script type="text/javascript">
+        var proxy = 'https://cors-anywhere.herokuapp.com/';
+        var router_url = https://192.168.0.1/goform/login;
         var data = {
             user: "cusadmin",
             pwd: "Qwerty@1",
@@ -23,7 +25,7 @@
         $("#login").click(function () {
             $.ajax({
                 type: 'POST',
-                url: "https://192.168.0.1/goform/login",
+                url: proxy+router_url,
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 contentType: 'application/x-www-form-urlencoded; charset=utf-8',
                 // dataType: 'json',
